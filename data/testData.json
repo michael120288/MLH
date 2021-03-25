@@ -1,0 +1,12 @@
+{
+"oneSymbol": "w",
+  "seventySymbols": "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqr",
+  "name": "winniethepooh",
+  "lowerUpperCases": "WinnieThePooh",
+  "digits": "1234567890",
+  "specialSymbols": ".\\+*?[^]$_-\"'(){}=!<>|:-@#:;&~",
+  "nameWithSpaces":"Winnie Pooh",
+  "russianLetters": "Виннипух",
+  "koreanLetters": "곰돌이푸",
+  "age": "1234567890"
+}
