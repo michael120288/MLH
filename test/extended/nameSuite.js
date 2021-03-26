@@ -72,13 +72,13 @@ describe('Name field positive and negative cases', function (){
         let field = $(sel.errorMessage).isDisplayed()
         expect(field).toEqual(false)
     });
-    //
-    // it('TC-037 Name field accepts Korean letters  ', function () {
-    //     browser.url('');
-    //     $(sel.name).setValue(data.koreanLetters)
-    //     let field = $(sel.name).getValue(data.koreanLetters)
-    //     expect(field).toEqual(data.koreanLetters)
-    // });
+
+    it('TC-037 Name field accepts Korean letters  ', function () {
+        browser.url('');
+        $(sel.name).setValue(data.koreanLetters)
+        let field = $(sel.errorMessage).isDisplayed()
+        expect(field).toEqual(false)
+    });
 
     // it('TC-038 Copy paste functionality  ', function () {
     //     browser.url('https://google.com');
