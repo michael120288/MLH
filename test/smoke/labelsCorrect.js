@@ -19,16 +19,16 @@ describe('Labels are correct', function () {
     });
 
 
-    it('TC-017 Name field label = "1.What is your Hero\'s name?"', function () {
-        let label = $$(sel.requiredLabel)[0].getText();
-        expect(label).toEqual(exp.nameLabel);
-    });
-
-
-    it('TC-018 Gender field label = "2.Please choose a gender"', function () {
-        let nameField = $$(sel.requiredLabel)[1].getText();
-        expect(nameField).toEqual(exp.genderLabel);
-    });
+    // it('TC-017 Name field label = "1.What is your Hero\'s name?"', function () {
+    //     let label = $$(sel.requiredLabel)[0].getText();
+    //     expect(label).toEqual(exp.nameLabel);
+    // });
+    //
+    //
+    // it('TC-018 Gender field label = "2.Please choose a gender"', function () {
+    //     let nameField = $$(sel.requiredLabel)[1].getText();
+    //     expect(nameField).toEqual(exp.genderLabel);
+    // });
 
 
     it('TC-019 The first button label = "he"', function () {
@@ -54,15 +54,15 @@ describe('Labels are correct', function () {
         expect(label).toEqual(exp.storyLabel);
     });
 
-    it('TC-024 Image label = 5. Upload an image (optional).', function () {
-        let imageLabel = $$(sel.imageLabel)[4].getText();
-        expect(imageLabel).toEqual(exp.imageLabel);
-    });
-
-    it('TC-025 Submit button label = Create!', function () {
-        let button = $(sel.submit).getText();
-        expect(button).toEqual(exp.submitText);
-    });
+    // it('TC-024 Image label = 5. Upload an image (optional).', function () {
+    //     let imageLabel = $$(sel.imageLabel)[4].getText();
+    //     expect(imageLabel).toEqual(exp.imageLabel);
+    // });
+    //
+    // it('TC-025 Submit button label = Create!', function () {
+    //     let button = $(sel.submit).getText();
+    //     expect(button).toEqual(exp.submitText);
+    // });
 
 
 });

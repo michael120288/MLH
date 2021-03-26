@@ -1,5 +1,5 @@
 import sel from '../../data/selectors';
-import exp from '../../data/expected.json';
+
 
 describe('Required fields and story created', function () {
 
@@ -8,8 +8,8 @@ describe('Required fields and story created', function () {
     });
 
     it('TC-026 Submit button is enabled after fields 1-4 filled in with valid values', function () {
-        $(sel.name).setValue('LadyBug007');
-        $$(sel.radioButtons)[1].click();
+        $(sel.name).setValue("Winnie-The-Pooh")
+        $$(sel.radioButtons)[0].click();
         $(sel.age).setValue('1234567890');
         $(sel.storyType).click();
         $$(sel.storyList)[6].click();
@@ -22,7 +22,7 @@ describe('Required fields and story created', function () {
     it('TC-027 Submit button is enabled after fields 1-4 filled in with valid values', function () {
         browser.refresh();
 
-        $(sel.name).setValue('LadyBug007');
+        $(sel.name).setValue('Winnie-The-Pooh');
         $$(sel.radioButtons)[1].click();
         $(sel.age).setValue('1234567890');
         $(sel.storyType).click();

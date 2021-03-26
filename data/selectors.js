@@ -13,7 +13,8 @@ const elements = {
     "image":"span.ant-upload",
     "submit":".ant-btn",
     "tryAgain": ".btn-primary",
-    "google": ".gLFyf"
+    "google": ".gLFyf",
+    "errorMessage": ".ant-form-item-explain"
 }
 
 module.exports = elements;
