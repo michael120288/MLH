@@ -65,13 +65,13 @@ describe('Name field positive and negative cases', function (){
         let field = $(sel.errorMessage).isDisplayed();
         expect(field).toEqual(false)
     });
-    //
-    // it('TC-036 Name field accepts Russian letters ', function () {
-    //     browser.url('');
-    //     $(sel.name).setValue(data.russianLetters)
-    //     let field = $(sel.name).getValue(data.russianLetters)
-    //     expect(field).toEqual(data.russianLetters)
-    // });
+
+    it('TC-036 Name field accepts Russian letters ', function () {
+        browser.url('');
+        $(sel.name).setValue(data.russianLetters)
+        let field = $(sel.errorMessage).isDisplayed()
+        expect(field).toEqual(false)
+    });
     //
     // it('TC-037 Name field accepts Korean letters  ', function () {
     //     browser.url('');
