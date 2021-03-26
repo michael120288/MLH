@@ -58,13 +58,13 @@ describe('Name field positive and negative cases', function (){
         let field = $(sel.errorMessage).isDisplayed()
         expect(field).toEqual(false)
     });
-    //
-    // it('TC-035 Name field accepts letters with spaces ', function () {
-    //     browser.url('');
-    //     $(sel.name).setValue(data.nameWithSpaces)
-    //     let field = $(sel.name).getValue(data.nameWithSpaces)
-    //     expect(field).toEqual(data.nameWithSpaces)
-    // });
+
+    it('TC-035 Name field accepts letters with spaces ', function () {
+        browser.url('');
+        $(sel.name).setValue(data.nameWithSpaces);
+        let field = $(sel.errorMessage).isDisplayed();
+        expect(field).toEqual(false)
+    });
     //
     // it('TC-036 Name field accepts Russian letters ', function () {
     //     browser.url('');
