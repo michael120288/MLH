@@ -20,7 +20,6 @@ describe('Name field positive and negative cases', function (){
         browser.url('');
         $(sel.name).setValue(data.oneSymbol)
         let field = $(sel.errorMessage).isDisplayed()
-        browser.pause(2000)
         expect(field).toEqual(false)
 
     });
@@ -31,20 +30,20 @@ describe('Name field positive and negative cases', function (){
         let field = $(sel.errorMessage).isDisplayed()
         expect(field).toEqual(false)
     });
-    //
-    // it('TC-031 Name field accepts letters ', function () {
-    //     browser.url('');
-    //     $(sel.name).setValue(data.name)
-    //     let field = $(sel.name).getValue(data.name)
-    //     expect(field).toEqual(data.name)
-    // });
-    //
-    // it('TC-032 Name field accepts lower case / upper case ', function () {
-    //     browser.url('');
-    //     $(sel.name).setValue(data.lowerUpperCases)
-    //     let field = $(sel.name).getValue(data.lowerUpperCases)
-    //     expect(field).toEqual(data.lowerUpperCases)
-    // });
+
+    it('TC-031 Name field accepts letters ', function () {
+        browser.url('');
+        $(sel.name).setValue(data.name)
+        let field = $(sel.errorMessage).isDisplayed()
+        expect(field).toEqual(false)
+    });
+
+    it('TC-032 Name field accepts lower case / upper case ', function () {
+        browser.url('');
+        $(sel.name).setValue(data.lowerUpperCases)
+        let field = $(sel.errorMessage).isDisplayed()
+        expect(field).toEqual(false)
+    });
     //
     // it('TC-033 Name field accepts digits ', function () {
     //     browser.url('');
