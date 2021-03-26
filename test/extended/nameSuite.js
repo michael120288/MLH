@@ -25,13 +25,12 @@ describe('Name field positive and negative cases', function (){
 
     });
 
-    // it('TC-030 Name field accepts 70 symbols ', function () {
-    //     browser.url('');
-    //     $(sel.name).setValue(data.seventySymbols)
-    //     let field = $(sel.name).getValue(data.seventySymbols)
-    //
-    //     expect(field).toEqual(data.seventySymbols)
-    // });
+    it('TC-030 Name field accepts 70 symbols ', function () {
+        browser.url('');
+        $(sel.name).setValue(data.seventySymbols)
+        let field = $(sel.errorMessage).isDisplayed()
+        expect(field).toEqual(false)
+    });
     //
     // it('TC-031 Name field accepts letters ', function () {
     //     browser.url('');
