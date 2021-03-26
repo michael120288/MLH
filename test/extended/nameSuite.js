@@ -88,14 +88,19 @@ describe('Name field positive and negative cases', function (){
     //     expect(field).toEqual(data.koreanLetters)
     // });
 
-    // it('TC-039 Empty name field  ', function () {
-    //     browser.url('');
-    //     $(sel.name).click();
-    //     $(sel.radioButtons).click();
-    //     $(sel.age).setValue(data.age)
-    //     $(sel.storyType).click().get
-    //     let field = $(sel.name).getValue(data.koreanLetters)
-    //     expect(field).toEqual(data.koreanLetters)
-    // });
+    it('TC-039 Name field accepts Korean letters  ', function () {
+        browser.url('');
+        $(sel.name).setValue(data.age)
+        $(sel.name).clearValue()
+        let field = $(sel.errorMessage).isDisplayed()
+        expect(field).toEqual(false)
+    });
+
+    it('TC-040 Name field accepts japanese emoticons letters  ', function () {
+        browser.url('');
+        $(sel.name).setValue(data.japaneseEmoticons)
+        let field = $(sel.errorMessage).isDisplayed()
+        expect(field).toEqual(false)
+    });
 
 });
