@@ -44,13 +44,13 @@ describe('Name field positive and negative cases', function (){
         let field = $(sel.errorMessage).isDisplayed()
         expect(field).toEqual(false)
     });
-    //
-    // it('TC-033 Name field accepts digits ', function () {
-    //     browser.url('');
-    //     $(sel.name).setValue(data.digits)
-    //     let field = $(sel.name).getValue(data.digits)
-    //     expect(field).toEqual(data.digits)
-    // });
+
+    it('TC-033 Name field accepts digits ', function () {
+        browser.url('');
+        $(sel.name).setValue(data.digits)
+        let field = $(sel.errorMessage).isDisplayed()
+        expect(field).toEqual(false)
+    });
     //
     // it('TC-034 Name field accepts special symbols ', function () {
     //     browser.url('');
