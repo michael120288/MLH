@@ -1,14 +1,10 @@
 import sel from '../../data/selectors';
 import exp from '../../data/expected.json';
-import data from '../../data/testData.json'
+import {name,gender,age,story} from '../../data/testData'
 
 
 
 describe('Name field positive and negative cases', function (){
-
-    // before('Open App',function (){
-    //     browser.url('')// open base url
-    // });
 
     it('TC-028 Name field placeholder = \'Hero\'s name"', function () {
         browser.url('');
@@ -18,7 +14,7 @@ describe('Name field positive and negative cases', function (){
 
     it('TC-029 Name field accepts 1 symbol', function () {
         browser.url('');
-        $(sel.name).setValue(data.oneSymbol)
+        $(sel.name).setValue(name.oneSymbol)
         let field = $(sel.errorMessage).isDisplayed()
         expect(field).toEqual(false)
 
@@ -26,61 +22,68 @@ describe('Name field positive and negative cases', function (){
 
     it('TC-030 Name field accepts 70 symbols ', function () {
         browser.url('');
-        $(sel.name).setValue(data.seventySymbols)
+        $(sel.name).setValue(name.seventySymbols)
         let field = $(sel.errorMessage).isDisplayed()
         expect(field).toEqual(false)
     });
 
     it('TC-031 Name field accepts letters ', function () {
         browser.url('');
-        $(sel.name).setValue(data.name)
+        $(sel.name).setValue(name.name)
         let field = $(sel.errorMessage).isDisplayed()
         expect(field).toEqual(false)
     });
 
     it('TC-032 Name field accepts lower case / upper case ', function () {
         browser.url('');
-        $(sel.name).setValue(data.lowerUpperCases)
+        $(sel.name).setValue(name.lowerUpperCases)
         let field = $(sel.errorMessage).isDisplayed()
         expect(field).toEqual(false)
     });
 
-    it('TC-033 Name field accepts digits ', function () {
+    it('TC-035 Name field accepts digits ', function () {
         browser.url('');
-        $(sel.name).setValue(data.digits)
+        $(sel.name).setValue(name.digits)
         let field = $(sel.errorMessage).isDisplayed()
         expect(field).toEqual(false)
     });
 
-    it('TC-034 Name field accepts special symbols ', function () {
+    it('TC-036 Name field accepts special symbols ', function () {
         browser.url('');
-        $(sel.name).setValue(data.specialSymbols)
+        $(sel.name).setValue(name.specialSymbols)
         let field = $(sel.errorMessage).isDisplayed()
         expect(field).toEqual(false)
     });
 
-    it('TC-035 Name field accepts letters with spaces ', function () {
+    it('TC-037 Name field accepts letters with spaces ', function () {
         browser.url('');
-        $(sel.name).setValue(data.nameWithSpaces);
+        $(sel.name).setValue(name.nameWithSpaces);
         let field = $(sel.errorMessage).isDisplayed();
         expect(field).toEqual(false)
     });
 
-    it('TC-036 Name field accepts Russian letters ', function () {
+    it('TC-038 Verify that name field can accept spaces in the end of letters  ', function () {
         browser.url('');
-        $(sel.name).setValue(data.russianLetters)
+        $(sel.name).setValue(name.spaceInTheEnd);
+        let field = $(sel.errorMessage).isDisplayed();
+        expect(field).toEqual(false)
+    });
+
+    it('TC-039 Verify that name field can accept spaces in the beginning of letters  ', function () {
+        browser.url('');
+        $(sel.name).setValue(name.spaceInTheBeginning);
+        let field = $(sel.errorMessage).isDisplayed();
+        expect(field).toEqual(false)
+    });
+
+    it('TC-040 Name field accepts Russian letters ', function () {
+        browser.url('');
+        $(sel.name).setValue(name.russianLetters)
         let field = $(sel.errorMessage).isDisplayed()
         expect(field).toEqual(false)
     });
 
-    it('TC-037 Name field accepts Korean letters  ', function () {
-        browser.url('');
-        $(sel.name).setValue(data.koreanLetters)
-        let field = $(sel.errorMessage).isDisplayed()
-        expect(field).toEqual(false)
-    });
-
-    // it('TC-038 Copy paste functionality  ', function () {
+    // it('TC-041 Copy paste functionality  ', function () {
     //     browser.url('https://google.com');
     //     $(sel.google).setValue(data.name).keys(['command', 'a']).keys(['command', 'c'])
     //
@@ -88,25 +91,24 @@ describe('Name field positive and negative cases', function (){
     //     expect(field).toEqual(data.koreanLetters)
     // });
 
-    it('TC-039 Name field accepts Korean letters  ', function () {
+    it('TC-043 Verify that name field can\'t accept empty name field  ', function () {
         browser.url('');
-        $(sel.name).setValue(data.age)
-        $(sel.name).clearValue()
+        $(sel.name).setValue(name.emptyField)
         let field = $(sel.errorMessage).isDisplayed()
         expect(field).toEqual(false)
     });
 
-    it('TC-040 Name field accepts japanese emoticons letters  ', function () {
+    it('TC-043 Verify that name field can\'t accept 71 symbols', function () {
         browser.url('');
-        $(sel.name).setValue(data.japaneseEmoticons)
+        $(sel.name).setValue(name.seventyOneSymbols)
         let field = $(sel.errorMessage).isDisplayed()
-        expect(field).toEqual(false)
+        expect(field).toEqual(true)
     });
 
-    it('TC-041 Name field correctly handles Thai characters  ', function () {
+    it('TC-044 Verify that name field can\'t accept 71 symbols', function () {
         browser.url('');
-        $(sel.name).setValue(data.thaiCharacters)
+        $(sel.name).setValue(name.seventyOneSymbols)
         let field = $(sel.errorMessage).isDisplayed()
-        expect(field).toEqual(false)
+        expect(field).toEqual(true)
     });
 });

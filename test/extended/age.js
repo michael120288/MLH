@@ -1,5 +1,5 @@
 import sel from '../../data/selectors';
-import {name,gender,age,story} from '../../data/testData2'
+import {name,gender,age,story} from '../../data/testData'
 import inputValues4 from '../../helpers/methods'
 
 describe('Age field suite', function () {

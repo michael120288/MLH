@@ -1,5 +1,5 @@
 import sel from "../data/selectors";
-import {age, gender, name, story} from "../data/testData2";
+import {age, gender, name, story} from "../data/testData";
 
 function inputValues4(name, gender, age, story){
     $(sel.name).setValue(name)
