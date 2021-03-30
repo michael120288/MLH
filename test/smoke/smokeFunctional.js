@@ -1,5 +1,6 @@
 import sel from '../../data/selectors';
-
+import {name,gender,age,story} from '../../data/testData2'
+import inputValues4 from '../../helpers/methods'
 
 describe('Required fields and story created', function () {
 
@@ -8,28 +9,19 @@ describe('Required fields and story created', function () {
     });
 
     it('TC-026 Submit button is enabled after fields 1-4 filled in with valid values', function () {
-        $(sel.name).setValue("Winnie-The-Pooh")
-        $$(sel.radioButtons)[0].click();
-        $(sel.age).setValue('1234567890');
+        $(sel.name).setValue(name.default)
+        $$(sel.radioButtons)[gender.he].click();
+        $(sel.age).setValue(age.default);
         $(sel.storyType).click();
-        $$(sel.storyList)[6].click();
-
-        browser.pause(1000)
+        $$(sel.storyList)[story.comedy].click();
         let submitBtn = $(sel.submit).isEnabled();
         expect(submitBtn).toEqual(true);
     });
 
     it('TC-027 Submit button is enabled after fields 1-4 filled in with valid values', function () {
         browser.refresh();
-
-        $(sel.name).setValue('Winnie-The-Pooh');
-        $$(sel.radioButtons)[1].click();
-        $(sel.age).setValue('1234567890');
-        $(sel.storyType).click();
-        $$(sel.storyList)[6].click();
+        inputValues4(name.default,gender.he,age.default,story.comedy)
         $(sel.submit).click();
-
-        browser.pause(1000)
         let tryAgainBtn = $(sel.tryAgain).isDisplayed();
         expect(tryAgainBtn).toEqual(true);
     });

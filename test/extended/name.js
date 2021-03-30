@@ -103,4 +103,10 @@ describe('Name field positive and negative cases', function (){
         expect(field).toEqual(false)
     });
 
+    it('TC-041 Name field correctly handles Thai characters  ', function () {
+        browser.url('');
+        $(sel.name).setValue(data.thaiCharacters)
+        let field = $(sel.errorMessage).isDisplayed()
+        expect(field).toEqual(false)
+    });
 });
