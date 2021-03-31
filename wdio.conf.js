@@ -26,7 +26,13 @@ exports.config = {
          './test/smoke/elementsExist.js',
          './test/smoke/labelsCorrect.js',
           './test/smoke/smokeFunctional.js',
-          './test/extended/name.js'
+          // './test/extended/name.js',
+        './test/extended/age.js',
+        './test/extended/gender.js',
+        './test/extended/image.js',
+        './test/extended/reset.js',
+        './test/extended/story.js',
+        './test/extended/submit.js'
 
     ],
     //

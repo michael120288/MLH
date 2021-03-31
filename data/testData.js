@@ -11,6 +11,7 @@ const name = {
     "russianLetters": "Виннипух",
     "koreanLetters": "곰돌이푸",
     "emptyField": "",
+    "spaceInTheField": " ",
     "spaceInTheEnd":"abc ",
     "spaceInTheBeginning":" abc",
     "japaneseEmoticons": "¯\\_(ツ)_/¯",
