@@ -87,4 +87,13 @@ describe('Gender suite with radio buttons', function (){
 
     })
 
+    it('TC-055 Verify that  user can switch the option from he -> it', function (){
+        browser.refresh()
+        $$(selGen.gender)[gender.she].click();
+        $$(selGen.gender)[gender.he].click();
+        let sheButton = $$(selGen.gender)[gender.he].isSelected()
+        expect(sheButton).toEqual(true)
+
+    })
+
 })
