@@ -87,7 +87,7 @@ describe('Gender suite with radio buttons', function (){
 
     })
 
-    it('TC-055 Verify that  user can switch the option from he -> it', function (){
+    it('TC-055 Verify that  user can switch the option from she -> he', function (){
         browser.refresh()
         $$(selGen.gender)[gender.she].click();
         $$(selGen.gender)[gender.he].click();
@@ -96,11 +96,29 @@ describe('Gender suite with radio buttons', function (){
 
     })
 
-    it('TC-056 Verify that  user can switch the option from he -> it', function (){
+    it('TC-056 Verify that  user can switch the option from she -> it', function (){
         browser.refresh()
         $$(selGen.gender)[gender.she].click();
         $$(selGen.gender)[gender.it].click();
         let sheButton = $$(selGen.gender)[gender.it].isSelected()
+        expect(sheButton).toEqual(true)
+
+    })
+
+    it('TC-057 Verify that  user can switch the option from it -> he', function (){
+        browser.refresh()
+        $$(selGen.gender)[gender.it].click();
+        $$(selGen.gender)[gender.he].click();
+        let sheButton = $$(selGen.gender)[gender.he].isSelected()
+        expect(sheButton).toEqual(true)
+
+    })
+
+    it('TC-058 Verify that  user can switch the option from it -> she', function (){
+        browser.refresh()
+        $$(selGen.gender)[gender.it].click();
+        $$(selGen.gender)[gender.she].click();
+        let sheButton = $$(selGen.gender)[gender.she].isSelected()
         expect(sheButton).toEqual(true)
 
     })
