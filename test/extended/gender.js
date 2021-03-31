@@ -33,33 +33,19 @@ describe('Gender suite with radio buttons', function (){
 
     })
 
-    it('TC-050 User can choose only one button at the time: "he"', () => {
-         browser.refresh()
-        let elem = $$(selGen.gender)[gender.he]
-        let isEnabled = elem.isEnabled();
-        console.log(isEnabled); // outputs: true
-
-        elem = $$(selGen.gender)[gender.she]
-        isEnabled = elem.isEnabled();
-        console.log(isEnabled); // outputs: false
-
-        elem = $$(selGen.gender)[gender.it]
-        isEnabled = elem.isEnabled();
-        console.log(isEnabled); // outputs: false
-    });
-
-    it('TC-051 User can choose only one button at the time: "she"', () => {
+    it('TC-050 Verify that button "he" is enabled and she and it are disable', function (){
         browser.refresh()
-        let elem = $$(selGen.gender)[gender.she]
-        let isEnabled = elem.isEnabled();
-        console.log(isEnabled); // outputs: true
+        $$(selGen.gender)[gender.he].click();
+        let heButton = $$(selGen.gender)[gender.he].isSelected()
+        expect(heButton).toEqual(true)
+        let sheButton = $$(selGen.gender)[gender.she].isSelected()
+        expect(sheButton).toEqual(false)
+        let itButton = $$(selGen.gender)[gender.it].isSelected()
+        expect(itButton).toEqual(false)
 
-        elem = $$(selGen.gender)[gender.he]
-        isEnabled = elem.isEnabled();
-        console.log(isEnabled); // outputs: false
 
-        elem = $$(selGen.gender)[gender.it]
-        isEnabled = elem.isEnabled();
-        console.log(isEnabled); // outputs: false
-    });
+
+    })
+
+
 })
