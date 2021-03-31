@@ -43,7 +43,17 @@ describe('Gender suite with radio buttons', function (){
         let itButton = $$(selGen.gender)[gender.it].isSelected()
         expect(itButton).toEqual(false)
 
+    })
 
+    it('TC-051 Verify that button "she" is enabled and he and it are disable', function (){
+        browser.refresh()
+        $$(selGen.gender)[gender.she].click();
+        let sheButton = $$(selGen.gender)[gender.she].isSelected()
+        expect(sheButton).toEqual(true)
+        let heButton = $$(selGen.gender)[gender.he].isSelected()
+        expect(heButton).toEqual(false)
+        let itButton = $$(selGen.gender)[gender.it].isSelected()
+        expect(itButton).toEqual(false)
 
     })
 
