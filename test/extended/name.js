@@ -1,6 +1,6 @@
 import sel from '../../data/selectors';
 import exp from '../../data/expected.json';
-import {name,gender,age,story} from '../../data/testData'
+import {name} from '../../data/testData'
 
 
 
@@ -98,16 +98,24 @@ describe('Name field positive and negative cases', function (){
         expect(field).toEqual(false)
     });
 
-    it('TC-043 Verify that name field can\'t accept 71 symbols', function () {
+    it('TC-044 Verify that name field can\'t accept 71 symbols', function () {
         browser.url('');
         $(sel.name).setValue(name.seventyOneSymbols)
+        let field = $(sel.errorMessage70).getText()
+        browser.pause(1000)
+        expect(field).toEqual(exp.errorMassage70)
+    });
+
+    it('TC-044 Verify that name field can\'t accept only spaces', function () {
+        browser.url('');
+        $(sel.name).setValue(name.spaceInTheField)
         let field = $(sel.errorMessage).isDisplayed()
         expect(field).toEqual(true)
     });
 
-    it('TC-044 Verify that name field can\'t accept 71 symbols', function () {
+    it('TC-044 Verify that name field can\'t accept only spaces', function () {
         browser.url('');
-        $(sel.name).setValue(name.seventyOneSymbols)
+        $(sel.name).setValue(name.spaceInTheField)
         let field = $(sel.errorMessage).isDisplayed()
         expect(field).toEqual(true)
     });
