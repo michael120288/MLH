@@ -1,7 +1,7 @@
 import sel from '../../data/selectors';
 import selGen from '../../data/genderSelectors'
 import exp from '../../data/expected.json';
-import {gender} from '../../data/testData'
+import {gender,name,age} from '../../data/testData'
 
 describe('Gender suite with radio buttons', function (){
 
@@ -120,6 +120,17 @@ describe('Gender suite with radio buttons', function (){
         $$(selGen.gender)[gender.she].click();
         let sheButton = $$(selGen.gender)[gender.she].isSelected()
         expect(sheButton).toEqual(true)
+
+    })
+
+    it('TC-059 Verify that not chosen button "Gender" Required', function (){
+        browser.refresh()
+        $(sel.name).setValue(name.default)
+        $(sel.age).setValue(age.default)
+        $(sel.storyType).click()
+        $(sel.storyList).click()
+        let submitButton = $(sel.submit).isEnabled();
+        expect(submitButton).toEqual(false)
 
     })
 
