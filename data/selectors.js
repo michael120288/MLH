@@ -11,7 +11,8 @@ const elements = {
     "storyList":".ant-select-item",
     "imageLabel": ".ant-form-item-label",
     "image":"span.ant-upload",
-    "submit":".ant-btn",
+    "submit1":".ant-btn",
+
     "tryAgain": ".btn-primary",
     "errorMessage": ".ant-form-item-explain",
     "errorMessage70":"div[role=alert]"
